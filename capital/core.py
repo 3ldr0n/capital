@@ -4,7 +4,7 @@ import pygame
 
 from area import Area
 
-background_music = os.getcwd() + '/morrowind.mp3'
+background_music = os.getcwd() + '/music/morrowind.mp3'
 def play_background_music():
     pygame.mixer.init()
     pygame.mixer.music.load(background_music)
