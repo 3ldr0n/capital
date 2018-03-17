@@ -1,2 +1,2 @@
 # capital
-Text game
+It's a text RPG based on elder scrolls' lore.
