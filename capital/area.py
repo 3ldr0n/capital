@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Area:
 
     def __init__(self, name, description="Empty room", possible_directions={}):
