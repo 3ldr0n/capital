@@ -1,5 +1,4 @@
-"""
-Edison Neto, This software is a text RPG based on the elder scrolls game series' lore.
+""" Edison Neto, This software is a text RPG based on the elder scrolls game series' lore.
 
 Copyright (C) 2018 Edison Neto
 This program is free software; you can redistribute it and/or
@@ -19,7 +18,10 @@ import os
 import time
 import pygame
 
+import items
+import enemies
 from area import Area
+from player import Player
 
 background_music = os.getcwd() + '/music/morrowind.mp3'
 def play_background_music():
@@ -49,7 +51,15 @@ def choice():
 def run():
     opening()
 
-    starting_area= Area("Prision")
+    starting_area = Area("Prision")
+
+    player = Player('Eldron')
+    player.get_item(items.SteelSword())
+
+    print(player)
+    player.check_inventory()
+
+
 
 if __name__ == '__main__':
     run()

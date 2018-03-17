@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class Item:
 
-    def __init__(self, name, descriptio, value):
+    def __init__(self, name, description, value):
         self.name = name
         self.description = description
         self.value = value
@@ -31,7 +31,7 @@ class Septim(Item):
 
     def __init__(self, quantity):
         self.quantity = quantity
-        super().__init__("Septims", "Septims are the moneyt", 1)
+        super().__init__("Septims", "Septims are the money.", 1)
 
 
 class Weapon(Item):
@@ -39,6 +39,10 @@ class Weapon(Item):
     def __init__(self, name, description, value, damage):
         self.damage = damage
         super().__init__(name, description, value)
+
+
+    def enhance(self, percentage):
+        self.damage += (self.damage * percentage)
 
 
     def __str__(self):

@@ -23,7 +23,9 @@ class Player:
         self.name = name
         self.hp = 100
         self.maxhp = 100
-        self.inventario = [items.Septim(15)]
+        self.mana = 100
+        self.maxmana = 100
+        self.inventory = [items.Septim(15)]
 
     def set_hp(self, hp):
         self.hp = hp
@@ -42,4 +44,9 @@ class Player:
 
 
     def get_item(self, item):
-        self.inventario.append(item)
+        self.inventory.append(item)
+
+
+    def __str__(self):
+        return "You are {}, you have {} points of health\n{} points of mana".format(
+                                                self.name, self.hp, self.mana)
