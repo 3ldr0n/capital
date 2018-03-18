@@ -60,6 +60,5 @@ def run():
     player.check_inventory()
 
 
-
 if __name__ == '__main__':
     run()

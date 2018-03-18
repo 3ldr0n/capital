@@ -25,10 +25,12 @@ class Player:
         self.maxhp = 100
         self.mana = 100
         self.maxmana = 100
-        self.inventory = [items.Septim(15)]
+        self.inventory = [items.Septim(0)]
+
 
     def set_hp(self, hp):
         self.hp = hp
+
 
     def set_maxhp(self, maxhp):
         self.maxhp = maxhp

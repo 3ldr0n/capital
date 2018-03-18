@@ -89,3 +89,13 @@ class SteelSword(Weapon):
                          description="A sword made out of steel",
                          value=15,
                          damage=18)
+
+
+class EbonySword(Weapon):
+
+    def __init__(self):
+        super().__init__(
+                         name="Ebony Sword",
+                         description="A sword made out of ebony",
+                         value=35,
+                         damage=40)
