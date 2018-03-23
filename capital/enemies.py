@@ -15,6 +15,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 """
 
+from utils import select_race
+
 class Enemy:
 
     def __init__(self, name, hp, damage):
@@ -29,9 +31,45 @@ class Draugr(Enemy):
         super().__init__(name="Draugr", hp=100, damage=20)
 
 
+class Vampire(Enemy):
+
+    def __init__(self, race):
+        self.race = race
+        super().__init__(name="Vampire", hp=170, damage=65)
+
+
+    def vampirism(self, player):
+        player.acquire_vampirism()
+
+
+class Bandit(Enemy):
+
+    def __init__(self, name, hp, damage, race):
+        self.race = race
+        super().__init__(name, hp, damage)
+
+
+class BanditChied(Bandit):
+
+    def __init__(self):
+        super().__init__("Bandit Chief", 200, 75, select_race())
+
+
+class Mage(Enemy):
+
+    def __init__(self, name, hp, damage, mana, race):
+        self.mana = mana
+        self.race = race
+        super().__init__(name, hp, damage)
+
+
+class Dremora(Enemy):
+
+    def __init__(self):
+        super().__init__(name="Dremora", hp=250, damage=120)
+
+
 class Dragon(Enemy):
 
     def __init__(self):
-        super().__init__(name="Dragon", hp=1000, damage=190)
-
-
+        super().__init__(name="Dragon", hp=1000, damage=250)

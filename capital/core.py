@@ -53,7 +53,8 @@ def run():
 
     starting_area = Area("Prision")
 
-    player = Player('Eldron')
+    # Who are you ...
+    player = Player('')
     player.get_item(items.SteelSword())
 
     print(player)

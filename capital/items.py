@@ -50,36 +50,14 @@ class Weapon(Item):
                                                       self.description,
                                                       self.value, self.damage)
 
-
-class Rock(Weapon):
-
-    def __init__(self):
-        super().__init__(
-                         name="Rock",
-                         description="Rocky rock",
-                         value=0,
-                         damage=3)
-
-
-class BluntSword(Weapon):
+class IronSword(Weapon):
 
     def __init__(self):
         super().__init__(
-                         name="Blunt Sword",
-                         description="Just a blunt sword",
-                         value=5,
-                         damage=8)
-
-
-class RustySword(Weapon):
-
-    def __init__(self):
-        super().__init__(
-                         name="Rusty Sword",
-                         description="Rusty sword",
+                         name="Iron Sword",
+                         description="A sword made out of iron.",
                          value=10,
                          damage=15)
-
 
 class SteelSword(Weapon):
 

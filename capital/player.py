@@ -1,5 +1,5 @@
 """
-Edison Neto, This software is a text RPG based on the elder scrolls game series' lore.
+Edison Neto, This software is a text RPG based on the elder scrolls' lore.
 
 Copyright (C) 2018 Edison Neto
 This program is free software; you can redistribute it and/or
@@ -26,6 +26,8 @@ class Player:
         self.mana = 100
         self.maxmana = 100
         self.inventory = [items.Septim(0)]
+        self.vampirism = False,
+        self.lycanthropy = False
 
 
     def set_hp(self, hp):
@@ -49,6 +51,24 @@ class Player:
         self.inventory.append(item)
 
 
+    def acquire_vampirism(self):
+        # TODO
+        # Make player weak in the sun.
+        self.vampirism = True
+
+
     def __str__(self):
         return "You are {}, you have {} points of health\n{} points of mana".format(
                                                 self.name, self.hp, self.mana)
+
+
+class Redguard(Player):
+
+    def __init__(self):
+        super().__init__('Redguard')
+
+
+class Khajhit(Player):
+
+    def __init__(self):
+        super().__init__('Khajhit')
