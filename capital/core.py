@@ -23,7 +23,7 @@ import enemies
 from area import Area
 from player import Player
 
-background_music = os.getcwd() + '/music/morrowind.mp3'
+background_music = os.getcwd() + '/resources/'
 def play_background_music():
     pygame.mixer.init()
     pygame.mixer.music.load(background_music)
@@ -41,24 +41,10 @@ def opening():
         print(line.center(columns))
         time.sleep(3)
 
-def choice():
-    choice = ""
-    while choice not in possible_choices:
-        choice = input("> ")
-    return choice
-
-
 def run():
     opening()
 
     starting_area = Area("Prision")
-
-    # Who are you ...
-    player = Player('')
-    player.get_item(items.SteelSword())
-
-    print(player)
-    player.check_inventory()
 
 
 if __name__ == '__main__':
