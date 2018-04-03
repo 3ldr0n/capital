@@ -25,6 +25,17 @@ class Enemy:
         self.damage = damage
 
 
+    def is_alive(self):
+        if self.hp > 0:
+            return True
+        return False
+
+
+    def __str__(self):
+        return "Name: {}\nLife: {}\nDamage: {}".format(
+                                    self.name, self.hp, self.damage)
+
+
 class Draugr(Enemy):
 
     def __init__(self):
