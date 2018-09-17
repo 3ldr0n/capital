@@ -15,13 +15,13 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 """
 
+
 class Item:
 
     def __init__(self, name, description, value):
         self.name = name
         self.description = description
         self.value = value
-
 
     def __str__(self):
         return "{}\n{}\nValue: {}".format(self.name, self.description, self.value)
@@ -40,30 +40,28 @@ class Weapon(Item):
         self.damage = damage
         super().__init__(name, description, value)
 
-
     def enhance(self, percentage):
         self.damage += (self.damage * percentage)
-
 
     def __str__(self):
         return "{}\n{}\nDamage: {}\nValue: {}".format(self.name,
                                                       self.description,
                                                       self.value, self.damage)
 
+
 class IronSword(Weapon):
 
     def __init__(self):
-        super().__init__(
-                         name="Iron Sword",
+        super().__init__(name="Iron Sword",
                          description="A sword made out of iron.",
                          value=10,
                          damage=15)
 
+
 class SteelSword(Weapon):
 
     def __init__(self):
-        super().__init__(
-                         name="Steel Sword",
+        super().__init__(name="Steel Sword",
                          description="A sword made out of steel",
                          value=15,
                          damage=18)
@@ -72,8 +70,7 @@ class SteelSword(Weapon):
 class EbonySword(Weapon):
 
     def __init__(self):
-        super().__init__(
-                         name="Ebony Sword",
+        super().__init__(name="Ebony Sword",
                          description="A sword made out of ebony",
                          value=35,
                          damage=40)

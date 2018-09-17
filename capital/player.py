@@ -17,6 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import items
 
+
 class Player:
 
     def __init__(self, name):
@@ -29,37 +30,30 @@ class Player:
         self.vampirism = False,
         self.lycanthropy = False
 
-
     def set_hp(self, hp):
         self.hp = hp
 
-
     def set_maxhp(self, maxhp):
         self.maxhp = maxhp
-
 
     def check_inventory(self):
         for item in self.inventory:
             print(item)
 
-
     def is_alive(self):
         return self.hp > 0
 
-
     def get_item(self, item):
         self.inventory.append(item)
-
 
     def acquire_vampirism(self):
         # TODO
         # Make player weak in the sun.
         self.vampirism = True
 
-
     def __str__(self):
         return "You are {}, you have {} points of health\n{} points of mana".format(
-                                                self.name, self.hp, self.mana)
+            self.name, self.hp, self.mana)
 
 
 class Redguard(Player):
